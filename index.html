@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emily | Waxing</title>
+    <meta
+      name="description"
+      content="Waxing services by Emily, presented in a calm, Japandi-inspired style."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f4f3e9;
+        --panel: #fffaf1;
+        --card: #e6eddf;
+        --sage: #91a47f;
+        --sage-deep: #566d4e;
+        --moss: #43543d;
+        --sage-soft: #e4ecd9;
+        --sand: #f3e8d5;
+        --clay: #ad7954;
+        --ink: #2a2824;
+        --muted: #6d655f;
+        --line: rgba(42, 40, 36, 0.12);
+        --rose: #caa3a0;
+        --pearl: #fffaf6;
+        --shadow: 0 24px 70px rgba(55, 44, 35, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        background: linear-gradient(135deg, #f4f3e9 0%, #f8f2e7 52%, #edf2e6 100%);
+        color: var(--ink);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1200px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(12px);
+        background: rgba(248, 247, 237, 0.94);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 80px;
+        gap: 28px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(42, 40, 36, 0.15);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.8rem;
+        line-height: 1;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .brand-text {
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.28rem;
+        text-transform: uppercase;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        font-size: 0.82rem;
+        letter-spacing: 0.06rem;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .nav a {
+        position: relative;
+      }
+
+      .nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 1px;
+        background: var(--ink);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s ease;
+      }
+
+      .nav a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        letter-spacing: 0.12rem;
+        text-transform: uppercase;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: var(--ink);
+        color: var(--pearl);
+        padding: 16px 28px;
+        box-shadow: 0 14px 30px rgba(42, 40, 36, 0.14);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--ink);
+        border: 1px solid rgba(42, 40, 36, 0.2);
+        padding: 15px 24px;
+      }
+
+      .hero {
+        padding: 36px 0 72px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        align-items: center;
+        gap: 52px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.75rem;
+        letter-spacing: 0.18rem;
+        text-transform: uppercase;
+        color: var(--sage-deep);
+        margin-bottom: 18px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 38px;
+        height: 1px;
+        background: var(--sage-deep);
+      }
+
+      h1, h2, h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-size: clamp(4rem, 7vw, 7.2rem);
+        line-height: 0.9;
+        margin-bottom: 20px;
+      }
+
+      .lead {
+        font-size: 1.08rem;
+        line-height: 1.9;
+        color: var(--muted);
+        max-width: 560px;
+        margin-bottom: 30px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 36px;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        color: var(--muted);
+        font-size: 0.83rem;
+        letter-spacing: 0.08rem;
+        text-transform: uppercase;
+      }
+
+      .meta-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.12);
+        border-radius: 999px;
+      }
+
+      .meta-pill::before {
+        content: "✦";
+        color: var(--sage-deep);
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 640px;
+      }
+
+      .hero-photo {
+        position: absolute;
+        inset: 0 0 48px 16%;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background:
+          linear-gradient(180deg, rgba(18, 20, 12, 0.02), rgba(18, 20, 12, 0.08)),
+          url('waxing-hero.jpg') center 48%/cover no-repeat;
+      }
+
+      .floating-card {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: min(280px, 70%);
+        background: rgba(250, 245, 240, 0.9);
+        border: 1px solid rgba(42, 40, 36, 0.08);
+        border-radius: 22px;
+        padding: 20px 20px 18px;
+        box-shadow: 0 18px 30px rgba(67, 55, 44, 0.08);
+      }
+
+      .floating-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        color: var(--muted);
+        font-size: 0.7rem;
+        letter-spacing: 0.12rem;
+        text-transform: uppercase;
+      }
+
+      .rating {
+        color: var(--ink);
+        font-size: 1.95rem;
+        line-height: 1;
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      .floating-card p {
+        margin: 6px 0 0;
+        line-height: 1.7;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      section {
+        padding: 30px 0 110px;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 38px;
+      }
+
+      .section-header h2 {
+        font-size: clamp(2.8rem, 5vw, 4.4rem);
+      }
+
+      .section-header p {
+        max-width: 520px;
+        color: var(--muted);
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 26px;
+      }
+
+      .service-card {
+        background: linear-gradient(180deg, var(--sage-soft), rgba(255,255,255,0.72));
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 34px 28px 22px;
+        min-height: 330px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card:nth-child(2) {
+        background: linear-gradient(180deg, var(--sand), rgba(255,255,255,0.68));
+      }
+
+      .service-number {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.6rem;
+        color: var(--sage-deep);
+        margin-bottom: 10px;
+      }
+
+      .service-card h3 {
+        font-size: clamp(2rem, 3vw, 2.8rem);
+        margin-bottom: 10px;
+      }
+
+      .service-card p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin: 0 0 24px;
+      }
+
+      .service-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        color: var(--ink);
+        font-size: 0.82rem;
+        letter-spacing: 0.06rem;
+        text-transform: uppercase;
+      }
+
+      .price {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+
+      .ritual {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 34px;
+        align-items: center;
+      }
+
+      .ritual-visual {
+        position: relative;
+        min-height: 520px;
+      }
+
+      .ritual-photo {
+        position: absolute;
+        inset: 0;
+        border-radius: 34px 34px 140px 34px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background:
+          linear-gradient(180deg, rgba(28, 29, 19, 0.12), rgba(28, 29, 19, 0.18)),
+          url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+      }
+
+      .ritual-badges {
+        position: absolute;
+        bottom: 28px;
+        left: 24px;
+        right: 24px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 11px 14px;
+        background: rgba(250,245,240,0.9);
+        border: 1px solid rgba(42,40,36,0.08);
+        border-radius: 999px;
+        font-size: 0.74rem;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+      }
+
+      .ritual-copy {
+        background: rgba(255,255,255,0.24);
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        padding: 42px 36px;
+      }
+
+      .ritual-copy h2 {
+        font-size: clamp(2.8rem, 4vw, 4.2rem);
+        margin-bottom: 20px;
+      }
+
+      .ritual-copy p {
+        margin: 0 0 18px;
+        line-height: 1.9;
+        color: var(--muted);
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 26px 0 0;
+        display: grid;
+        gap: 16px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 0.96rem;
+        color: var(--ink);
+      }
+
+      .feature-item::before {
+        content: "✓";
+        width: 26px;
+        height: 26px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--sage-soft);
+        color: var(--sage-deep);
+        font-weight: 700;
+      }
+
+      .reviews {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .review-card {
+        padding: 30px 28px 24px;
+        border-radius: 26px;
+        background: rgba(255,255,255,0.32);
+        border: 1px solid var(--line);
+      }
+
+      .stars {
+        letter-spacing: 0.12rem;
+        color: var(--clay);
+        font-size: 0.9rem;
+        margin-bottom: 18px;
+      }
+
+      .review-card p {
+        margin: 0 0 24px;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      .reviewer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+      }
+
+      .reviewer strong {
+        display: block;
+        font-size: 0.9rem;
+      }
+
+      .reviewer span {
+        color: var(--muted);
+        font-size: 0.78rem;
+        letter-spacing: 0.08rem;
+        text-transform: uppercase;
+      }
+
+      .avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #d9c5be, #95a69f);
+      }
+
+      .cta-panel {
+        padding: 36px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, rgba(145,164,127,0.4), rgba(243,232,213,0.96));
+        border: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .cta-panel h3 {
+        font-size: clamp(2.3rem, 4vw, 4rem);
+      }
+
+      .cta-panel p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .info-section {
+        padding-top: 24px;
+      }
+
+      .care-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .info-card,
+      .contact-card,
+      .faq-list details {
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.32);
+      }
+
+      .info-card {
+        padding: 30px;
+      }
+
+      .info-card h3,
+      .contact-card h3 {
+        font-size: 2.4rem;
+        margin-bottom: 14px;
+      }
+
+      .info-card ul {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      .info-note,
+      .form-note {
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.7;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .faq-list details {
+        padding: 20px 24px;
+      }
+
+      .faq-list summary {
+        cursor: pointer;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .faq-list details p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin: 14px 0 0;
+        max-width: 760px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 28px;
+        align-items: start;
+      }
+
+      .contact-intro {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .contact-card {
+        padding: 32px;
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 16px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .contact-form label {
+        display: grid;
+        gap: 8px;
+        font-size: 0.8rem;
+        letter-spacing: 0.06rem;
+        text-transform: uppercase;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        border: 1px solid rgba(42, 40, 36, 0.18);
+        border-radius: 12px;
+        background: rgba(255, 250, 246, 0.8);
+        color: var(--ink);
+        font: inherit;
+        font-size: 0.95rem;
+        letter-spacing: normal;
+        padding: 14px 15px;
+        text-transform: none;
+      }
+
+      .contact-form textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: 2px solid var(--sage);
+        outline-offset: 2px;
+      }
+
+      .contact-form button:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .quick-menu {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 20;
+      }
+
+      .quick-menu summary {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        list-style: none;
+        cursor: pointer;
+        border-radius: 999px;
+        padding: 16px 22px;
+        background: var(--ink);
+        color: var(--pearl);
+        box-shadow: 0 14px 34px rgba(42, 40, 36, 0.22);
+        font-size: 0.78rem;
+        letter-spacing: 0.12rem;
+        text-transform: uppercase;
+      }
+
+      .quick-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .quick-menu summary::before {
+        content: "☰";
+        font-size: 1rem;
+        line-height: 1;
+      }
+
+      .quick-menu-list {
+        position: absolute;
+        right: 0;
+        bottom: calc(100% + 12px);
+        display: grid;
+        gap: 4px;
+        width: 220px;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: rgba(249, 245, 242, 0.97);
+        box-shadow: var(--shadow);
+      }
+
+      .quick-menu-list a {
+        border-radius: 12px;
+        padding: 13px 14px;
+        color: var(--ink);
+        font-size: 0.86rem;
+        transition: background 0.2s ease;
+      }
+
+      .quick-menu-list a:hover,
+      .quick-menu-list a:focus-visible {
+        background: rgba(130, 151, 127, 0.2);
+      }
+
+      .header-menu {
+        position: relative;
+      }
+
+      .header-menu summary {
+        list-style: none;
+      }
+
+      .header-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .header-menu summary {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        width: auto;
+        min-height: 44px;
+        padding: 12px 20px;
+        font-size: 0.76rem;
+        letter-spacing: 0.12rem;
+        white-space: nowrap;
+      }
+
+      .header-menu summary::before {
+        content: "☰";
+        font-size: 0.95rem;
+        line-height: 1;
+      }
+
+      .header-menu-list {
+        top: calc(100% + 12px);
+        bottom: auto;
+      }
+
+      .sound-control {
+        position: fixed;
+        left: 24px;
+        bottom: 24px;
+        z-index: 20;
+        display: grid;
+        gap: 8px;
+      }
+
+      .sound-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 14px 18px;
+        background: rgba(249, 245, 242, 0.96);
+        color: var(--ink);
+        box-shadow: 0 12px 30px rgba(55, 44, 35, 0.14);
+        font: inherit;
+        font-size: 0.76rem;
+        letter-spacing: 0.08rem;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .sound-toggle:hover {
+        background: var(--pearl);
+      }
+
+      .sound-status {
+        max-width: 260px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.75rem;
+        line-height: 1.5;
+      }
+
+      .site-footer {
+        padding: 28px 0 90px;
+        color: var(--muted);
+      }
+
+      .footer-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        font-size: 0.78rem;
+        letter-spacing: 0.08rem;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 980px) {
+        .nav {
+          display: none;
+        }
+
+        .hero-grid,
+        .ritual,
+        .services,
+        .reviews,
+        .care-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-visual {
+          min-height: 540px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .quick-menu {
+          right: 16px;
+          bottom: 16px;
+        }
+
+        .sound-control {
+          left: 16px;
+          bottom: 16px;
+        }
+
+        .sound-toggle {
+          padding: 12px 14px;
+          font-size: 0.7rem;
+        }
+
+        .nav-actions {
+          gap: 10px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+          width: 100%;
+        }
+
+        .header-menu summary {
+          width: auto;
+        }
+
+        .cta-row {
+          display: grid;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-card,
+        .info-card {
+          padding: 24px;
+        }
+
+        .section-header {
+          display: block;
+        }
+
+        .hero {
+          padding-top: 20px;
+        }
+
+        .brand-text {
+          letter-spacing: 0.2rem;
+        }
+
+        h1 {
+          line-height: 0.95;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand" aria-label="Emily">
+          <div class="brand-mark">E</div>
+          <div class="brand-text">Emily</div>
+        </div>
+
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#care">Aftercare</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <details class="header-menu">
+            <summary class="btn btn-secondary">Menu</summary>
+            <nav class="quick-menu-list header-menu-list" aria-label="Header menu">
+              <a href="#services">Waxing services</a>
+              <a href="#about">About Emily</a>
+              <a href="#reviews">Reviews</a>
+              <a href="#care">Before &amp; aftercare</a>
+              <a href="#faq">Waxing FAQ</a>
+              <a href="#contact">Contact</a>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Waxing by Emily</div>
+            <h1>Waxing,<br />with care.</h1>
+            <p class="lead">
+              Emily offers waxing services. Explore the areas below and check with her
+              for the current service menu, pricing, and booking details.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#services">View waxing services</a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="A waxing treatment in progress">
+            <div class="hero-photo"></div>
+            <div class="floating-card">
+              <div class="floating-top">
+                <span>Waxing</span>
+                <span>By Emily</span>
+              </div>
+              <div class="rating">Emily</div>
+              <p>Waxing services</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-header">
+            <h2>Waxing services</h2>
+            <p>Sample service menu — update these offerings and TBD prices to match Emily’s actual services before publishing.</p>
+          </div>
+
+          <div class="services">
+            <article class="service-card">
+              <div class="service-number">01</div>
+              <h3>Face</h3>
+              <p>Eyebrows, upper lip, chin, or a combination of facial areas.</p>
+              <div class="service-meta">
+                <span>Sample price</span>
+                <span class="price">TBD</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-number">02</div>
+              <h3>Underarms</h3>
+              <p>A quick appointment for smooth underarms.</p>
+              <div class="service-meta">
+                <span>Sample price</span>
+                <span class="price">TBD</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-number">03</div>
+              <h3>Legs</h3>
+              <p>Choose a half-leg or full-leg waxing appointment.</p>
+              <div class="service-meta">
+                <span>Sample price</span>
+                <span class="price">TBD</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-number">04</div>
+              <h3>Bikini</h3>
+              <p>Bikini line waxing with service options confirmed at booking.</p>
+              <div class="service-meta">
+                <span>Sample price</span>
+                <span class="price">TBD</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-number">05</div>
+              <h3>Brazilian</h3>
+              <p>Brazilian waxing. Check with Emily about service details and suitability.</p>
+              <div class="service-meta">
+                <span>Sample price</span>
+                <span class="price">TBD</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-number">06</div>
+              <h3>Arms</h3>
+              <p>Half-arm or full-arm waxing options.</p>
+              <div class="service-meta">
+                <span>Sample price</span>
+                <span class="price">TBD</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="cta-panel">
+            <div>
+              <div class="eyebrow">About Emily</div>
+              <h3>A little about Emily</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae lectus sed justo blandit tincidunt. Curabitur at neque ut nulla facilisis feugiat.</p>
+            </div>
+            <a class="btn btn-primary" href="#contact">Get in touch</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section" id="reviews">
+        <div class="container">
+          <div class="reviews">
+            <article class="review-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <div class="info-note">Draft review</div>
+              <p>“Emily made me feel comfortable and explained each step. I’m so happy with how everything turned out.”</p>
+              <div class="reviewer">
+                <div>
+                  <strong>Placeholder client</strong>
+                  <span>Sample copy — replace</span>
+                </div>
+              </div>
+            </article>
+            <article class="review-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <div class="info-note">Draft review</div>
+              <p>“It was easy to ask questions, and the appointment felt relaxed from start to finish.”</p>
+              <div class="reviewer">
+                <div>
+                  <strong>Placeholder client</strong>
+                  <span>Sample copy — replace</span>
+                </div>
+              </div>
+            </article>
+            <article class="review-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <div class="info-note">Draft review</div>
+              <p>“A lovely experience with thoughtful care. I’d happily book with Emily again.”</p>
+              <div class="reviewer">
+                <div>
+                  <strong>Placeholder client</strong>
+                  <span>Sample copy — replace</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section" id="care">
+        <div class="container">
+          <div class="section-header">
+            <h2>Waxing care</h2>
+            <p>A few simple things can help you prepare and feel more comfortable afterward. Follow any specific guidance Emily gives you.</p>
+          </div>
+          <div class="care-grid">
+            <article class="info-card">
+              <h3>Before your wax</h3>
+              <ul>
+                <li>Let hair grow to about ¼ inch so the wax can grip it.</li>
+                <li>Arrive with clean, dry skin and avoid applying oils or heavy lotion to the area.</li>
+                <li>Gently exfoliate a day or two beforehand, not immediately before your appointment.</li>
+                <li>Let Emily know about skin sensitivities or products you use on the area.</li>
+              </ul>
+            </article>
+            <article class="info-card">
+              <h3>After your wax</h3>
+              <ul>
+                <li>Keep the area clean and avoid rubbing or touching it unnecessarily.</li>
+                <li>For the first day, avoid heat, intense sweating, and tight clothing on the waxed area.</li>
+                <li>Skip exfoliation until the skin feels settled, then exfoliate gently between appointments.</li>
+                <li>Use a gentle, fragrance-free moisturizer if your skin needs it.</li>
+              </ul>
+            </article>
+          </div>
+          <p class="info-note">This is general care information, not medical advice. If you have a skin condition or are unsure whether waxing is right for you, check with a qualified healthcare professional and ask Emily before booking.</p>
+        </div>
+      </section>
+
+      <section class="info-section" id="faq">
+        <div class="container">
+          <div class="section-header">
+            <h2>Waxing, explained</h2>
+            <p>New to waxing? Here are a few straightforward answers to common questions.</p>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>What is waxing?</summary>
+              <p>Waxing removes hair from the root using wax applied to the skin. Regrowth and results vary from person to person.</p>
+            </details>
+            <details>
+              <summary>Does waxing hurt?</summary>
+              <p>Sensation varies by person and treatment area. You may feel a brief sting or tug; let Emily know if you need a pause or have concerns.</p>
+            </details>
+            <details>
+              <summary>How long should the hair be?</summary>
+              <p>About ¼ inch is a useful general guide. If you’re unsure whether the hair is long enough, ask Emily before your appointment.</p>
+            </details>
+            <details>
+              <summary>Can I wax if my skin is irritated or I use active skincare?</summary>
+              <p>Waxing may not be suitable for irritated, broken, or sunburned skin, and some skincare products can make skin more sensitive. Share what you use with Emily and check with a healthcare professional if you’re uncertain.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section" id="contact">
+        <div class="container contact-grid">
+          <div>
+            <div class="eyebrow">Get in touch</div>
+            <h2>Contact Emily</h2>
+            <p class="contact-intro">Waxing in Gainesville, Florida. Have a question about services? Leave a message below.</p>
+          </div>
+          <div class="contact-card">
+            <h3>Send a message</h3>
+            <form class="contact-form">
+              <div class="form-row">
+                <label>
+                  Your name
+                  <input type="text" name="name" placeholder="Name" autocomplete="name" />
+                </label>
+                <label>
+                  Email address
+                  <input type="email" name="email" placeholder="you@example.com" autocomplete="email" />
+                </label>
+              </div>
+              <label>
+                Message
+                <textarea name="message" placeholder="How can Emily help?"></textarea>
+              </label>
+              <button class="btn btn-primary" type="button" disabled>Send message</button>
+              <p class="form-note">Contact form draft — it isn’t connected to an inbox yet.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <details class="quick-menu">
+      <summary>Menu</summary>
+      <nav class="quick-menu-list" aria-label="Quick navigation">
+        <a href="#services">Waxing services</a>
+        <a href="#about">About Emily</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#care">Before &amp; aftercare</a>
+        <a href="#faq">Waxing FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </details>
+
+    <div class="sound-control">
+      <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false">
+        <span aria-hidden="true">☂</span>
+        <span>Play rain sounds</span>
+      </button>
+      <p class="sound-status" id="sound-status" aria-live="polite">Optional ambient rain; starts when you press play.</p>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <div>Emily</div>
+        <div>Waxing · Gainesville, FL</div>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll(".quick-menu-list a").forEach((link) => {
+        link.addEventListener("click", () => {
+          link.closest("details").open = false;
+        });
+      });
+
+      const soundToggle = document.querySelector("#sound-toggle");
+      const soundStatus = document.querySelector("#sound-status");
+      let audioContext;
+      let musicGain;
+      let rainSources = [];
+      let rainBuffers = [];
+      let dropTimer;
+
+      function createRainBuffer() {
+        const frameCount = audioContext.sampleRate * 4;
+        const buffer = audioContext.createBuffer(1, frameCount, audioContext.sampleRate);
+        const channel = buffer.getChannelData(0);
+        for (let i = 0; i < frameCount; i += 1) {
+          channel[i] = Math.random() * 2 - 1;
+        }
+        return buffer;
+      }
+
+      function addRaindrop() {
+        if (!audioContext || !musicGain) return;
+        const now = audioContext.currentTime;
+        const source = audioContext.createBufferSource();
+        const filter = audioContext.createBiquadFilter();
+        const dropGain = audioContext.createGain();
+        source.buffer = rainBuffers[1];
+        filter.type = "bandpass";
+        filter.frequency.value = 1900 + Math.random() * 1300;
+        filter.Q.value = 0.8;
+        dropGain.gain.setValueAtTime(0.0001, now);
+        dropGain.gain.linearRampToValueAtTime(0.045 + Math.random() * 0.025, now + 0.012);
+        dropGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18 + Math.random() * 0.12);
+        source.connect(filter);
+        filter.connect(dropGain);
+        dropGain.connect(musicGain);
+        source.start(now);
+        source.stop(now + 0.35);
+        rainSources.push(source);
+        source.onended = () => {
+          rainSources = rainSources.filter((activeSource) => activeSource !== source);
+          source.disconnect();
+          filter.disconnect();
+          dropGain.disconnect();
+        };
+      }
+
+      async function startMusic() {
+        soundToggle.disabled = true;
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) {
+          soundStatus.textContent = "Ambient audio is not supported by this browser.";
+          soundToggle.disabled = false;
+          return;
+        }
+
+        try {
+          audioContext = audioContext || new AudioContextClass();
+          await audioContext.resume();
+          rainBuffers = [createRainBuffer(), createRainBuffer()];
+          musicGain = audioContext.createGain();
+          musicGain.gain.setValueAtTime(0, audioContext.currentTime);
+          musicGain.gain.linearRampToValueAtTime(0.24, audioContext.currentTime + 2);
+          musicGain.connect(audioContext.destination);
+
+          const lowPass = audioContext.createBiquadFilter();
+          const rainGain = audioContext.createGain();
+          lowPass.type = "lowpass";
+          lowPass.frequency.value = 1050;
+          rainGain.gain.value = 0.22;
+          const rain = audioContext.createBufferSource();
+          rain.buffer = rainBuffers[0];
+          rain.loop = true;
+          rain.connect(lowPass);
+          lowPass.connect(rainGain);
+          rainGain.connect(musicGain);
+          rain.start();
+          rainSources.push(rain);
+
+          const highPass = audioContext.createBiquadFilter();
+          const softRainGain = audioContext.createGain();
+          highPass.type = "highpass";
+          highPass.frequency.value = 700;
+          softRainGain.gain.value = 0.055;
+          const softRain = audioContext.createBufferSource();
+          softRain.buffer = rainBuffers[1];
+          softRain.loop = true;
+          softRain.connect(highPass);
+          highPass.connect(softRainGain);
+          softRainGain.connect(musicGain);
+          softRain.start();
+          rainSources.push(softRain);
+
+          dropTimer = window.setInterval(() => {
+            if (Math.random() > 0.35) addRaindrop();
+          }, 450);
+          addRaindrop();
+          soundToggle.setAttribute("aria-pressed", "true");
+          soundToggle.querySelector("span:last-child").textContent = "Pause rain sounds";
+          soundStatus.textContent = "Soft ambient rain is playing.";
+          soundToggle.disabled = false;
+        } catch (error) {
+          soundStatus.textContent = "Ambient rain couldn't start. Please check your browser's audio settings.";
+          console.error("Unable to start ambient rain:", error);
+          soundToggle.disabled = false;
+        }
+      }
+
+      function stopMusic() {
+        window.clearInterval(dropTimer);
+        if (musicGain && audioContext) {
+          const now = audioContext.currentTime;
+          musicGain.gain.cancelScheduledValues(now);
+          musicGain.gain.setTargetAtTime(0, now, 0.12);
+          rainSources.forEach((source) => source.stop(now + 0.6));
+        }
+        rainSources = [];
+        rainBuffers = [];
+        musicGain = null;
+        soundToggle.setAttribute("aria-pressed", "false");
+        soundToggle.querySelector("span:last-child").textContent = "Play rain sounds";
+        soundStatus.textContent = "Ambient rain is off.";
+      }
+
+      soundToggle.addEventListener("click", () => {
+        if (soundToggle.getAttribute("aria-pressed") === "true") {
+          stopMusic();
+        } else {
+          startMusic();
+        }
+      });
+    </script>
+  </body>
+</html>
